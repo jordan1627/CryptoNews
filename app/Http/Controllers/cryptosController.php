@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\upport\Facades\Http;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 
 class cryptosController extends Controller
