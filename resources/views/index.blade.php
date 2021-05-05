@@ -6,8 +6,8 @@
 
   <div class="container mx-auto px-4">
  
-    <h2 class="text-blue-500 uppercase tracking-wide font-semibold">Latest News</h2> 
-  	 <div class="popular-games text-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-12 border-b border-gray-800 pb-16">
+    <h2 class="hover:text-blue font-serif text-lg font-bold">Latest News</h2> 
+  	 <div class="popular-news text-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-12 border-b border-gray-800 pb-16">
 	   @foreach ($popularNews as $News)
   	 	<div class="game mt-8">
 		 
@@ -34,7 +34,7 @@
   	      <div class="flex flex-col lg:flex-row my-10">
 			
      	  <div class="recently-reviewed w-full lg:w-3/4  mr-0 lg:mr-32">
-     	  	 <h2 class="text-blue-500 uppercase tracking-wide font-semibold">General Crypto News</h2>
+     	  	 <h2 class="hover:text-blue font-serif text-lg font-bold">General Crypto News</h2>
      	  	    <div class="recently-reviewed-container space-y-12 mt-8">
 				   @foreach ($latestNews as $News)
      	  	    	<div class="bg-gray-background text-gray-900  rounded-lg shadow-md flex px-6 py-6">
@@ -63,8 +63,8 @@
     	    </div>
      	  </div>
 		  
-     	  <div class="most-anticipated lg:w-1/4 mt-12 lg:mt-0 pl-20">
-     	  	<h2 class="text-blue-500 uppercase tracking-wide font-semibold">Video</h2>
+     	  <div class="most-anticipated lg:w-1/4 mt-12 lg:mt-0 pl-10">
+     	  	<h2 class="hover:text-blue font-serif text-lg font-bold">Video</h2>
      	  	 <div class="most-anticipated space-y-10 mt-8">
      	  	 <div class="game flex center">
      	  	 	            <a href="https://www.youtube.com/watch?v=b-Fq9TZqO8A">

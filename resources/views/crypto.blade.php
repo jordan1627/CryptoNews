@@ -25,7 +25,7 @@
   	 	</div>
   	 </div>
 	   <div class="flex flex-col">
-    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="-my-2 overflow-x-auto sm:-mx-5 lg:-mx-1">
       <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
           <table class="min-w-full divide-y divide-gray-200">
@@ -63,7 +63,7 @@
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
                     <div class="flex-shrink-0 h-10 w-10">
-                      <img class="h-10 w-10 rounded-full" :src="" alt="" />
+                      <img class="h-10 w-10 rounded-full" :src=" " alt="" />
                     </div>
 				
                     <div class="ml-4">
@@ -74,7 +74,7 @@
                   </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-				{{ $Crypto['quote']['USD']['price'] }}
+			$	{{ $Crypto['quote']['USD']['price'] }}
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
@@ -85,10 +85,10 @@
 				{{ $Crypto['quote']['USD']['percent_change_7d'] }}
                 </td>
 				<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                {{ $Crypto['quote']['USD']['market_cap'] }}
+               $ {{ $Crypto['quote']['USD']['market_cap'] }}
                 </td>
 				<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-				{{ $Crypto['quote']['USD']['volume_24h'] }}
+			$	{{ $Crypto['quote']['USD']['volume_24h'] }}
                 </td>
 				<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
 				{{ $Crypto['circulating_supply'] }}

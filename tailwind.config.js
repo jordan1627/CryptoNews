@@ -38,6 +38,8 @@ module.exports = {
             },
             fontFamily: {
                 sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+                serif: ['Helvetica', 'Arial', 'sans-serif'],
+
             },
             fontSize: { 
             xxs: ['0.625rem', { lineHeight: '1rem' }],
