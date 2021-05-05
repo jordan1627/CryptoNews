@@ -6,15 +6,11 @@
                               @enderror
                               </div>
                               <div>
-                              <select wire:model.defer="category" name="category_add" id="category_add" class="w-full rounded-xl border-none text-sm px-4 py-2 bg-gray-100">
-                              @foreach ($categories as $category)
-                              <option value="{{ $category->id }}">{{ $category->name}}</option>
-                              @endforeach
-                              </select>
+                             
                               </div>
-                              @error('category')
-                              <p class="text-red text-xs mt-1">{{ $message}}</p>
-                              @enderror
+                             
+                           
+                        
                                 <div>
                                   <textarea wire:model.defer="description" name="idea" id="idea" cols="30" row="4" class="w-full bg-gray-100 rounded-xl placeholder-gray-900 text-sm px-4 py-2 border-none"placeholder="Describe your Idea" required></textarea>
                                   @error('description')
