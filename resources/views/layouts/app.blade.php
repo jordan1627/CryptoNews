@@ -14,12 +14,20 @@
 
 
         <!-- Styles -->
+<<<<<<< HEAD
        <link rel="stylesheet"  href="/css/app.css">
 
         <livewire:styles />
 
         <!-- Scripts -->
         <script src="js/app.js" defer></script>
+=======
+              <link rel="stylesheet"  href="/css/app.css">
+        <livewire:styles />
+
+        <!-- Scripts -->
+             <script src="js/app.js" defer></script>
+>>>>>>> 3e85e1cf41ac6604e4dbc81b4636092e4fd756cf
     </head>
     <body class="font-sans bg-gray-background text-gray-900 text-sm">
         <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
