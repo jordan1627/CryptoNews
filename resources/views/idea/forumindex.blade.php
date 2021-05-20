@@ -1,4 +1,9 @@
+<!-- Styles -->
+<link rel="stylesheet"  href="/css/app.css">
+<!-- Scripts -->
 <x-app-layout>
+
+<script src="/js/app.js" defer></script>
     <div class="filter flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6">
       <div class="w-full md:w-1/3">
          <select name="category" id="category" class="w-full rounded-xl border-none px-4 py-2">

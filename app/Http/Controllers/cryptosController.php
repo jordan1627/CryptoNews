@@ -34,6 +34,9 @@ class cryptosController extends Controller
 
     ]);
 
+
+
+
   }
 
     /**

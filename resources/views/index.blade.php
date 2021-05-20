@@ -4,9 +4,13 @@
 
 @section('content')
 
+
+
+			
+
   <div class="container mx-auto px-4">
  
-    <h2 class="hover:text-blue font-serif text-lg font-bold">Latest News</h2> 
+    <h2 class="hover:text-blue font-serif text-3xl text-black dark:text-blue font-bold">Latest News</h2> 
   	 <div class="popular-news text-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-12 border-b border-gray-800 pb-16">
 	   @foreach ($popularNews as $News)
   	 	<div class="game mt-8">
@@ -17,9 +21,9 @@
   	 				</a>
                      
   	 		</div>
-  	 		 <a href="{{ $News['news_url'] }}" class="block text-base font-semibold leading-tight hover:text-gray-400 mt-8">{{ $News['title'] }}</a>
-  	 		 <div class="text-gray-400 mt-1"></div>
-				<p>
+  	 		 <a href="{{ $News['news_url'] }}" class="block text-base font-semibold leading-tight hover:text-gray-400 dark:text-gray-100 mt-8">{{ $News['title'] }}</a>
+  	 	
+				<p class="text-black dark:text-gray-100 mt-1">
 		   {{ $News['date'] }}
 		   <p>
   	 	</div>
@@ -34,7 +38,7 @@
   	      <div class="flex flex-col lg:flex-row my-10">
 			
      	  <div class="recently-reviewed w-full lg:w-3/4  mr-0 lg:mr-32">
-     	  	 <h2 class="hover:text-blue font-serif text-lg font-bold">General Crypto News</h2>
+     	  	 <h2 class="hover:text-blue font-serif text-3xl text-black dark:text-blue font-bold">General Crypto News</h2>
      	  	    <div class="recently-reviewed-container space-y-12 mt-8">
 				   @foreach ($latestNews as $News)
      	  	    	<div class="bg-gray-background text-gray-900  rounded-lg shadow-md flex px-6 py-6">
@@ -64,7 +68,7 @@
      	  </div>
 		  
      	  <div class="most-anticipated lg:w-1/4 mt-12 lg:mt-0 pl-10">
-     	  	<h2 class="hover:text-blue font-serif text-lg font-bold">Video</h2>
+     	  	<h2 class="hover:text-blue font-serif text-3xl text-black dark:text-blue font-bold">Video</h2>
      	  	 <div class="most-anticipated space-y-10 mt-8">
      	  	 <div class="game flex center">
      	  	 	            <a href="https://www.youtube.com/watch?v=b-Fq9TZqO8A">
@@ -72,7 +76,7 @@
   	 				</a>
      	  	 </div>
 				<div class="relative center">
-  	 					<a href="https://crypto.snapi.dev/images/v1/v/m/anonymous-investor-is-dogecoins-first-billionaire-22682.jpg" class="hover:text-gray-300">Anonymous investor is Dogecoin's</a>
+  	 					<a href="https://crypto.snapi.dev/images/v1/v/m/anonymous-investor-is-dogecoins-first-billionaire-22682.jpg" class="hover:text-gray-400 text-gray-400">Anonymous investor is Dogecoin's</a>
   	 					<div class="text-gray-400 text-sm mt-1">First Billionaire</div>
   	 				</div>
 </div>
@@ -84,7 +88,7 @@
   	 				</a>
      	  	 </div>
 				<div class="relative center">
-  	 					<a href="https://www.youtube.com/watch?v=ZaPvrRQGGWE" class="hover:text-gray-300">Bitcoin Climate Debate</a>
+  	 					<a href="https://www.youtube.com/watch?v=ZaPvrRQGGWE" class="hover:text-gray-400 text-gray-400">Bitcoin Climate Debate</a>
   	 					<div class="text-gray-400 text-sm mt-1">Cointelegraph Crypto Duel</div>
   	 				</div>
 </div>
@@ -95,7 +99,7 @@
   	 				</a>
      	  	 </div>
 				<div class="relative center">
-  	 					<a href="https://www.youtube.com/watch?v=gco-xStrBkw" class="hover:text-gray-300">FOMCmeeting</a>
+  	 					<a href="https://www.youtube.com/watch?v=gco-xStrBkw" class="hover:text-gray-400 text-gray-400">FOMCmeeting</a>
   	 					<div class="text-gray-400 text-sm mt-1"></div>
   	 				</div>
 </div>
@@ -107,7 +111,7 @@
   	 				</a>
      	  	 </div>
 				<div class="relative center">
-  	 					<a href="https://www.youtube.com/watch?v=r_dK5lhkTN4" class="hover:text-gray-300">Dogecoin soars</a>
+  	 					<a href="https://www.youtube.com/watch?v=r_dK5lhkTN4" class="hover:text-gray-400 text-gray-400">Dogecoin soars</a>
   	 					<div class="text-gray-400 text-sm mt-1">JCNBC Television</div>
   	 				</div>
 </div>
@@ -119,7 +123,7 @@
   	 				</a>
      	  	 </div>
 				<div class="relative center">
-  	 					<a href="https://www.youtube.com/watch?v=-gme5OM3Q7Q" class="hover:text-gray-300">Don't Sweat</a>
+  	 					<a href="https://www.youtube.com/watch?v=-gme5OM3Q7Q" class="hover:text-gray-400 text-gray-400">Don't Sweat</a>
   	 					<div class="text-gray-400 text-sm mt-1">Bloomberg Technology</div>
   	 				</div>
 </div>
@@ -131,7 +135,7 @@
   	 				</a>
      	  	 </div>
 				<div class="relative center">
-  	 					<a href="https://www.youtube.com/watch?v=Wt6qekmn-1Q" class="hover:text-gray-300">Ripple co-founder</a>
+  	 					<a href="https://www.youtube.com/watch?v=Wt6qekmn-1Q" class="hover:text-gray-400 text-gray-400">Ripple co-founder</a>
   	 					<div class="text-gray-400 text-sm mt-1">Bloomberg Technology</div>
   	 				</div>
 </div>
@@ -144,7 +148,7 @@
   	 				</a>
      	  	 </div>
 				<div class="relative center">
-  	 					<a href="https://www.youtube.com/watch?v=Or3f6wEmlas" class="hover:text-gray-300">Tom McClellan..</a>
+  	 					<a href="https://www.youtube.com/watch?v=Or3f6wEmlas" class="hover:text-gray-400 text-gray-400">Tom McClellan..</a>
   	 					<div class="text-gray-400 text-sm mt-1">CNBC Television</div>
   	 				</div>
 </div>
@@ -158,7 +162,7 @@
 
      	  	 </div>
 				<div class="relative center">
-  	 					<a href="https://www.youtube.com/watch?v=AqDtycPJh80" class="hover:text-gray-300">Lyft co-founder </a>
+  	 					<a href="https://www.youtube.com/watch?v=AqDtycPJh80" class="hover:text-gray-400 text-gray-400 ">Lyft co-founder </a>
   	 					<div class="text-gray-400 text-sm mt-1">CNBC Television</div>
   	 				</div>
 </div>

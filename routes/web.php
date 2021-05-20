@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cryptosController;
 use App\Http\Controllers\crypto;
 use App\Http\Controllers\IdeaController;
+use App\Http\Controllers\latestlisting;
 
 
 /*
@@ -35,4 +36,5 @@ Route::get('/', function () {
 Route::get('/', [cryptosController::class,'index']);
 
 Route::get('Cryptocurrencies', [crypto::class,'index']);
+Route::get('Listing', [latestlisting::class,'index']);
 
