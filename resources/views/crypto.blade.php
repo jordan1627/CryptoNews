@@ -4,16 +4,14 @@
 
 @section('content')
 
-  <div class="container mx-auto px-4">
  
  
-  	 
     
-    
-     <div class="md:flex pl-10 flex items-center space-x-7">
+<div class="container mx-auto px-4">
+     <div class="md:flex pl-10 flex items-center space-x-6 pb-5">
            
-                    <a href="Cryptocurrencies"class="hover:text-blue font-serif text-2xl text-black dark:text-white font-bold"">Cryptocurrencies</a>
-                    <a href="Listing" class="hover:text-blue font-serif text-2xl text-black dark:text-white font-bold">Listing</a>
+                    <a href="Cryptocurrencies"class="hover:text-blue font-serif  text-1xl text-black dark:text-white font-bold"">Cryptocurrencies</a>
+                    <a href="Listing" class="hover:text-blue font-serif text-1xl   text-black dark:text-white font-bold">Ranking</a>
                     
      </div>
 
@@ -21,14 +19,11 @@
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-1">
       <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-9">
         <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-          <table class="min-w-full divide-y divide-gray-200">
+          <table class="min-w-full divide-y divide-gray-200 table-auto">
             <thead class="bg-gray-50">
               <tr>
 				       <th scope="col" class="px-5 py-3  pr-5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Name
-                </th>
-                <th scope="col" class="px-5 py-3  pr-5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Symbol
                 </th>
                 <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Price
@@ -38,10 +33,10 @@
                 </th>
                 
 				        <th scope="col" class="px-6 py-3 text-centertext-xs font-medium text-gray-500 uppercase tracking-wider">
-                percent_change_24h 
+                24h% 
                 </th>
 				        <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                percent_change_7d
+                7d%
                 </th>
 				        <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 market_cap
@@ -77,12 +72,7 @@
                     </div>
                   </div>
                 </td>
-            
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                {{ $logos['symbol']}}
-                    </td>
-          
-                  
+                    
          
                 <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-500">
                 {{ $crypto['quote']['USD']['price'] }}

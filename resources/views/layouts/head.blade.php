@@ -6,7 +6,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Crypto News</title>
    <link rel="stylesheet"  href="/css/app.css">
+   <script src="/js/app.js" defer></script>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
    <script>
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark')
@@ -18,38 +21,59 @@
  
 
 </head>
-<body class=" bg-gray-200 text-gray-900 dark:bg-gray-800 text-sm">
+<body class=" bg-gray-100 text-gray-900 dark:bg-gray-800 text-sm">
     <header class="border-b  dark:bg-gray-800 border-gray-100 ">
          
-        <nav class="bg-white dark:bg-gray-800 pb-5">
+        <nav class="bg-white dark:bg-gray-800 pb-5 border-b-2 ">
 
            <ul class="hidden md:flex container mx-auto flex flex-col lg:flex-row items-center justify-between pl-12 ">
                
-               <li><a href="#" class="pl-1 text-s text-black dark:text-white font-bold">Cryptos:</a></li>
-               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold"> 9,929</a></li>
-               <li><a href="#" class="pl-1 text-s text-black dark:text-white font-bold">Exchanges:</a></li>
-               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold"> 377</a></li>
+               <li><a href="#" class="pl-1 text-xs text-black dark:text-white font-bold">{{__('messages.cryptos')}}</a></li>
+               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold"> 10,178</a></li>
+               <li><a href="#" class="pl-1 text-xs text-black dark:text-white font-bold">{{__('messages.exchange')}}</a></li>
+               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold"> 387</a></li>
                   
-               <li><a href="#" class="pl-1 text-s text-black dark:text-white font-bold">MarketCap</a></li>
-               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold">$1,829,118,127,126</a></li>
+               <li><a href="#" class="pl-1 text-xs text-black dark:text-white font-bold">{{__('messages.marketcaps')}}</a></li>
+               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold">$1,629,155,055,576</a></li>
                
-               <li><a href="#" class="pl-1 text-s text-black dark:text-white font-bold">24hVol</a></li>
-               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold">$220,867,877,482</a></li>
+               <li><a href="#" class="pl-1 text-xs text-black dark:text-white font-bold">{{__('messages.24vol')}}</a></li>
+               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold">$119,364,900,193</a></li>
                
-               <li><a href="#" class="pl-1 text-s text-black dark:text-white font-bold">Dominance</a></li>
+               <li><a href="#" class="pl-1 text-xs text-black dark:text-white font-bold">{{__('messages.dominance')}}</a></li>
                <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold">BTC:ETH</a></li>
                
-               <li><a href="#" class="pl-1 text-s text-black dark:text-white font-bold">ETH</a></li>
-               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold">18.6%</a></li>
+               <li><a href="#" class="pl-1 text-xs text-black dark:text-white font-bold">{{__('messages.etc')}}</a></li>
+               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold">18.7%</a></li>
                  
-               <li><a href="#" class="pl-1 text-s text-black dark:text-white font-bold">BTC:</a></li>
-               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold">40.2%</a></li>
+               <li><a href="#" class="pl-1 text-xs text-black dark:text-white font-bold">{{__('messages.btc')}}</a></li>
+               <li><a href="#" class="pl-1 pr-5 underline text-xs text-blue font-bold">42.3%</a></li>
                 
                
                
+               <ul 
+               x-data="{ isOpen: false}"
+               class="container mx-auto flex flex-col lg:flex-row items-center mr-30 justify-center">
                
-               <ul class="container mx-auto flex flex-col lg:flex-row items-center mr-30 justify-center">
-               <li><a href="" class="p-1 pr-5 underline text-xs text-blue font-bold">ENG</a></li>
+               <button 
+                    @click="isOpen = !isOpen"
+                    class=" relative bg-gray  text-xs text-black dark:text-white font-bold hover:bg-gray-200 border rounded-full h-7 transition duration-150 ease-in py-1 px-3 focus:outline-none ">
+                    {{ Config::get('languages')[App::getLocale()] }}
+                     <ul
+                             x-cloak
+                             x-show.transition.origin.top.left.duration.500ms="isOpen"
+                             @click.away="isOpen = false"
+                             @keydown.escape.window="isOpen = false"
+
+                      class="absolute w-44 text-left font-semibold bg-white shadow-lg rounded-xl py-3 md:ml-8 top-8 md:top-6 right-0 md:left-0">  
+                      @foreach (Config::get('languages') as $lang => $language)
+                      @if ($lang != App::getLocale())
+                        <li><a href="{{ route('lang.switch', $lang) }}" class="hover:bg-gray-100 block transition duration-150 ease-in px-5 py-3">
+                        {{$language}}
+                        </a></li>
+                        @endif
+                       @endforeach
+                     </ul>
+                    </button>
                <button id="switchTheme" class="h-10 w-10 flex justify-center items-center focus:outline-none text-blue">
                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -80,18 +104,16 @@
             <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between pl-10 ">
             <div class="flex justify-between">
             <div class="flex">
-            <div><a href="/" class="flex items-center py-2 px-3"><img src="/img/logo.png" alt="Logo" class="h-20 w-60  flex-none pb-2"></a></div>
+            <div><a href="/" class="flex items-center py-2 px-3"><img src="/img/logo.png" alt="Logo" class="h-14 w-52  flex-none pb-2"></a></div>
 
             <div class="hidden md:flex flex items-center space-x-7">
-                    <a href="/" class="hover:text-blue font-serif text-lg text-black dark:text-white font-bold">News</a>
-                    <a href="Cryptocurrencies"class="hover:text-blue font-serif text-lg text-black dark:text-white font-bold"">Cryptocurrencies</a>
-                    <a href="#" class="hover:text-blue font-serif text-lg text-black dark:text-white font-bold">Exchange</a>
-                    <a href="#" class="hover:text-blue font-serif text-lg text-black dark:text-white font-bold">Guides</a>
-                    <a href="#" class="hover:text-blue font-serif text-lg text-black dark:text-white font-bold">NFT</a>
-                    <a href="#" class="hover:text-blue font-serif text-lg text-black dark:text-white font-bold">Market Cap</a>
-                    <a href="#" class="hover:text-blue font-serif text-lg dark:text-white font-bold">Price Tracker</a>
-                    <a href="/forum" class="hover:text-blue font-serif text-lg dark:text-white font-bold">Forum</a>
-                    <livewire:search-dropdown>  
+                    <a href="/" class="hover:text-blue font-serif text-sm text-black dark:text-white font-bold">{{__('messages.news')}}</a>
+                    <a href="Cryptocurrencies"class="hover:text-blue font-serif text-sm text-black dark:text-white font-bold">{{__('messages.cryptocurrencies')}}</a>
+                    <a href="Exchange" class="hover:text-blue font-serif text-sm text-black dark:text-white font-bold">{{__('messages.exchange')}}</a>
+                    <a href="NFT" class="hover:text-blue font-serif text-sm text-black dark:text-white font-bold">{{__('messages.nft')}}</a>
+                    <a href="#" class="hover:text-blue font-serif text-sm text-black dark:text-white font-bold">{{__('messages.marketcap')}}</a>
+                    <a href="/forum" class="hover:text-blue font-serif text-sm dark:text-white font-bold">{{__('messages.forum')}}</a>
+                 
                  
                             </div>
                        
@@ -114,14 +136,30 @@
                     <a href="/" class="block hover:text-blue font-serif text-lg font-bold py-5">News</a>
                     <a href="Cryptocurrencies"class="hover:text-blue font-serif text-lg font-bold py-5">Cryptocurrencies</a>
                     <a href="#" class=" block hover:text-blue font-serif text-lg font-bold py-5">Exchange</a>
-                    <a href="#" class=" block hover:text-blue font-serif text-lg font-bold py-5">Guides</a>
+
                     <a href="#" class=" block hover:text-blue font-serif text-lg font-bold py-5">Exchanges</a>
                     <a href="#" class=" block hover:text-blue font-serif text-lg font-bold py-5">Market Cap</a>
-                    <a href="#" class=" block hover:text-blue font-serif text-lg font-bold py-5">Price Tracker</a>
+               
                     <a href="/forum" class=" block hover:text-blue font-serif text-lg font-bold py-5">Forum</a>
                        </div>
         
     </nav>
+    <style>
+      @keyframes slide-nav-down{
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      nav.is-floating {
+      position: sticky;
+      top: 0;
+      transform: translateY(-100%);
+      animation: slide-nav-down .2s ease;
+      animation-fill-mode: forwards;
+    }
+    
+    </style>
     <script>
     const btn = document.querySelector('button.mobile-menu-button');
     const menu = document.querySelector('.mobile-menu');
@@ -129,11 +167,11 @@
             menu.classList.toggle("hidden");
     });
     </script>
-    
-    
- 
-<main class="py-8">
-<div class="hidden md:block icon-bar mx-auto items-center p-1  md:text-5xl ">
+
+<iframe _ngcontent-c12="" scrolling="no" style="height:100px; width:2000px; max-width: 100%;"  src="https://widget.coincodex.com/?type=4&amp;ticker=top20&amp;period=1D&amp;textColor=000000&amp;borderColor=dddddd&amp;backgroundColor=ffffff&amp;hoverColor=transparent&amp;currency=USD&amp;range=1D"></iframe>
+<script src="https://widget.coincodex.com/?type=4&ticker=top20&period=1D&textColor=000000&borderColor=dddddd&backgroundColor=ffffff&hoverColor=transparent&currency=USD&range=1D"></script>
+<main  class="py-8">
+<div class="hidden md:block icon-bar mx-auto items-center p-1  md:text-1xl ">
   <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
   <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
   <a href="#" class="google"><i class="fa fa-google"></i></a> 
@@ -193,7 +231,7 @@
 </style>
 	@yield('content')
 </main>
-<footer class="border-t bg-gray-800">
+<footer class="border-t bg-gray-100 dark:bg-gray-800">
 
 <!-- FOOTER START -->
 <div class="footer">
@@ -367,6 +405,7 @@
   }
 }
 </style>
+
 </footer>
 </body>
 </html>
