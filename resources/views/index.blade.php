@@ -62,7 +62,40 @@
      	  <div class="most-anticipated lg:w-1/4 mt-12 lg:mt-0 pl-10">
      	  	<h2 class="hover:text-blue font-serif text-3xl text-black dark:text-blue font-bold">Video</h2>
      	  	 <div class="most-anticipated space-y-10 mt-8">
-     	  	 <div class="game flex center">
+				<div class="game flex center">
+     	  	 	            <a href="https://www.youtube.com/watch?v=e25RUawsA44">
+  	 				<img src="https://crypto.snapi.dev/images/v1/5/5/55b222-32048.">
+  	 				</a>
+     	  	 </div>
+				<div class="center">
+  	 					<a href="https://crypto.snapi.dev/images/v1/v/m/anonymous-investor-is-dogecoins-first-billionaire-22682.jpg" class="hover:text-gray-400 text-gray-400">Net Good' for Bitcoin</a>
+  	 					<div class="text-gray-400 text-sm mt-1">Bloomberg Technology</div>
+  	 				</div>
+
+				<div class="game flex center">
+     	  	 	            <a href="https://www.youtube.com/watch?v=CA0ZNepk5N8">
+  	 				<img src="https://crypto.snapi.dev/images/v1/w/z/time-to-pause-on-bitcoin-academy-securities-tchir-says-32059.jpg">
+  	 				</a>
+     	  	 </div>
+				<div class="center">
+  	 					<a href="https://crypto.snapi.dev/images/v1/v/m/anonymous-investor-is-dogecoins-first-billionaire-22682.jpg" class="hover:text-gray-400 text-gray-400">Time to Pause on Bitcoin</a>
+  	 					<div class="text-gray-400 text-sm mt-1"> Markets and Finance</div>
+  	 				</div>
+
+					   <div class="game flex center">
+     	  	 	            <a href="https://www.youtube.com/watch?v=1BE2BO3e1j0">
+  	 				<img src="https://crypto.snapi.dev/images/v1/m/q/how-us-recovers-most-of-colonial-pipelines-bitcoin-ransom-32061.jpg">
+  	 				</a>
+     	  	 </div>
+				<div class="center">
+  	 					<a href="https://crypto.snapi.dev/images/v1/v/m/anonymous-investor-is-dogecoins-first-billionaire-22682.jpg" class="hover:text-gray-400 text-gray-400">Anonymous investor is Dogecoin's</a>
+  	 					<div class="text-gray-400 text-sm mt-1"> Most of Colonial</div>
+  	 				</div>
+
+
+
+
+		   	 <div class="game flex center">
      	  	 	            <a href="https://www.youtube.com/watch?v=b-Fq9TZqO8A">
   	 				<img src="https://crypto.snapi.dev/images/v1/v/m/anonymous-investor-is-dogecoins-first-billionaire-22682.jpg" alt="game cover" class="w-80 hover:opacity-75 transition ease-in-out duration-150">
   	 				</a>

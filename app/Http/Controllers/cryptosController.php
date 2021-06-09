@@ -15,15 +15,16 @@ class cryptosController extends Controller
   {
 
     $popularNews = Http::withToken('services.tmdb.token')
-    ->get('https://cryptonews-api.com/api/v1/category?section=general&items=12&token=sp3yxry8zaggyiojy22s49tn6jqs16rnbjvoanac')
-     ->json()['data'];
+    ->get('https://cryptonews-api.com/api/v1?tickers=BTC&items=12&token=pwd9ofld56lzy5tun86foymqzxihkmaso7umrrxq')
+     
+    ->json()['data'];
 
      //dump($popularNews);
 
 
 
      $latestNews = Http::withToken('services.tmdb.token')
-     ->get('https://cryptonews-api.com/api/v1?tickers=BTC,ETH,XRP&items=50&token=sp3yxry8zaggyiojy22s49tn6jqs16rnbjvoanac')
+     ->get('https://cryptonews-api.com/api/v1/category?section=general&items=50&token=pwd9ofld56lzy5tun86foymqzxihkmaso7umrrxq')
       ->json()['data'];
       
       //dump($latestNews);
